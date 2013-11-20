@@ -1,0 +1,5 @@
+# Superuser support
+service su-daemon /system/xbin/su --auto-daemon
+    class main
+    user root
+    oneshot
