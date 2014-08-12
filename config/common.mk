@@ -98,6 +98,11 @@ PRODUCT_PACKAGES += \
     sftp \
     scp
 
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
+
 # Boot animation
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 TARGET_SCREEN_HEIGHT := 800
