@@ -62,8 +62,7 @@ PRODUCT_COPY_FILES += \
 
 # Superuser
 SUPERUSER_EMBEDDED := true
-PRODUCT_COPY_FILES += \
-    vendor/pace/prebuilt/xbin/su:system/xbin/su
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 # Hosts
 PRODUCT_COPY_FILES += \
