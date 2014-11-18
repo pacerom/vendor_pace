@@ -97,10 +97,14 @@ PRODUCT_PACKAGES += \
     sftp \
     scp
 
-# Boot animation
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
+endif
+
+# Boot animation
+ifeq ($(TARGET_BOOTANIM_WIDTH),)
+TARGET_BOOTANIM_WIDTH := $(TARGET_SCREEN_WIDTH)
 endif
 bootanim_orientation := $(shell \
 	if [ $(TARGET_SCREEN_WIDTH) -lt $(TARGET_SCREEN_HEIGHT) ]; then \
@@ -108,7 +112,7 @@ bootanim_orientation := $(shell \
 	else \
 		echo landscape; \
 	fi)
-bootanim_file := vendor/pace/prebuilt/media/bootanim/$(bootanim_orientation)/$(TARGET_SCREEN_WIDTH).zip
+bootanim_file := vendor/pace/prebuilt/media/bootanim/$(bootanim_orientation)/$(TARGET_BOOTANIM_WIDTH).zip
 PRODUCT_COPY_FILES += \
     $(bootanim_file):system/media/bootanimation.zip
 
