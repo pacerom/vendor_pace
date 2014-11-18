@@ -45,6 +45,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 
+# Gesture capable LatinIME lib
+PRODUCT_COPY_FILES += \
+    vendor/pace/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/pace/overlay/common
 
